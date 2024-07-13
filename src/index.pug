@@ -6,8 +6,41 @@ html(lang='en')
   include pug/_head.pug 
   body
     .wrapper
-      .container
-        .start-page.flex-center
-          h1="Webpack 5 Template"
-          .start-page__image
-            +image('logo.png')
+      section.main
+        .container
+          .item
+            h2.item__header="Ultimate Bunny"
+            ul.component-list
+              li.component-list__item
+                details
+                  summary
+                    .component-list__item-icon
+                      //- +image('')
+                    h3.component-list__item-title="Ultimate Bunny Enhanced Cells"
+                  ul.component-list__sublist
+                    li.component-list__sublist-item#sublist
+                      ul.item-info-list.item-info-list_header
+                        li.item-info-list__item.item-info-list__item_header="Relic"
+                        li.item-info-list__item.item-info-list__item_header="Chance"
+                        li.item-info-list__item.item-info-list__item_header="Location"
+                        li.item-info-list__item.item-info-list__item_header="Sublocation"
+                        li.item-info-list__item.item-info-list__item_header="Mission"
+                      ul.item-info-list
+                        li.item-info-list__item="009"
+                        li.item-info-list__item="3%"
+                        li.item-info-list__item="Пустоши"
+                        li.item-info-list__item="Запретная зона"
+                        li.item-info-list__item="Забытый край"
+                      ul.item-info-list
+                        li.item-info-list__item="073"
+                        li.item-info-list__item="10%"
+                        li.item-info-list__item="Сумеречье"
+                        li.item-info-list__item="Брошенный склад снабжения"
+                        li.item-info-list__item="Брошенный склад снабжения: Стратегическая застава валгусов"
+                      ul.item-info-list
+                        li.item-info-list__item="113"
+                        li.item-info-list__item="10%"
+                        li.item-info-list__item="Пустыния Агио"
+                        li.item-info-list__item="Улучшенная база"
+                        li.item-info-list__item="Фронтовая база: Стратегическая застава валгусов"
+                

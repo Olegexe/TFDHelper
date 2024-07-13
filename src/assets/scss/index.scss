@@ -8,30 +8,68 @@
 
 body {
   font-family: $default-font;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: #161616;
   background-color: #f7f7f7;
 }
 
-h1 {
-  font-size: 46px;
-  line-height: 51px;
+.container {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
-.flex-center {
+.item {
+
+  &__header {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+.component-list {
+  padding-left: 32px;
+
+  &__sublist {
+    padding-left: 48px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__sublist-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+}
+
+.item-info-list {
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  column-gap: 16px;
+  align-items: flex-start;
 
-.start-page {
-  flex-direction: column;
-  row-gap: 20px;
-  height: 100vh;
+  &__item {
+    display: flex;
+    column-gap: 16px;
+    border: solid 1px black;
+    padding: 12px 16px;
+    flex: 1 0;
+    
+    &:nth-child(3) {
+      flex: 2 0;
+    }
 
-  &__image {
-    max-width: 600px;
+    &:nth-child(4), &:nth-child(5) {
+      flex: 5 0;
+    }
+
+    &_header {
+      font-weight: 600;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
   }
 }

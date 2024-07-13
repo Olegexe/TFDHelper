@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 const fs = require("fs");
 const PugPlugin = require('pug-plugin');
+const webpack = require('webpack');
 
 let mode = 'development';
 if(process.env.NODE_ENV === 'production') {
@@ -42,7 +43,7 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
     assetModuleFilename: "assets/[hash][ext][query]",
-    clean: true
+    clean: process.env.NODE_ENV === 'production'
   },
   optimization: {
     splitChunks: {
@@ -66,6 +67,11 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: `[name].[contenthash].css`
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
     }),
     // ...PAGES.map(page => new HtmlWebpackPlugin({
     //   template: `${PAGES_DIR}/${page}`,
@@ -106,6 +112,13 @@ module.exports = {
         type: 'asset/resource',
         generator: {
           filename: 'assets/img/[name][ext][query]'
+        }
+      },
+      {
+        test: /\.(mp4|webm)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/video/[name][ext][query]'
         }
       },
       {
