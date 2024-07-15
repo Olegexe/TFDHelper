@@ -1,8 +1,6 @@
 import React from 'react';
 import BunnyImg from '../../assets/img/bunny.jpg';
 
-console.log(BunnyImg)
-
 class Item extends React.Component {
 
     render() {
